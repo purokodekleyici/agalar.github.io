@@ -13,3 +13,272 @@
  </body>
 
  </html>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<div class="bolum">
+	<div class="palet">
+		<div class="palet_item_bolum">
+			<div data-color="#ffbb33" class="renk_paleti"></div>
+			<div data-color="#FF8800" class="renk_paleti"></div>
+			<div data-color="#00C851" class="renk_paleti"></div>
+			<div data-color="#007E33" class="renk_paleti"></div>
+			<div data-color="#33b5e5" class="renk_paleti"></div>
+			<div data-color="#0099CC" class="renk_paleti"></div>
+			<div data-color="#2BBBAD" class="renk_paleti"></div>
+			<div data-color="#00695c" class="renk_paleti"></div>
+			<div data-color="#2E2E2E" class="renk_paleti"></div>
+			<div data-color="#212121" class="renk_paleti"></div>
+		</div>
+		<div class="renk_paleti__main"></div>
+	</div>
+</div>
+<style>
+body{
+    margin: 0px;
+}
+.bolum {
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+
+.palet {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.palet .palet_item_bolum {
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
+}
+.palet.palet__opened .palet_item_bolum {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.palet.palet__opened .renk_paleti {
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+.palet.palet__opened .renk_paleti:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(2) {
+  -webkit-transform: rotate(36deg);
+          transform: rotate(36deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(3) {
+  -webkit-transform: rotate(72deg);
+          transform: rotate(72deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(4) {
+  -webkit-transform: rotate(108deg);
+          transform: rotate(108deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(5) {
+  -webkit-transform: rotate(144deg);
+          transform: rotate(144deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(6) {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(7) {
+  -webkit-transform: rotate(216deg);
+          transform: rotate(216deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(8) {
+  -webkit-transform: rotate(252deg);
+          transform: rotate(252deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(9) {
+  -webkit-transform: rotate(288deg);
+          transform: rotate(288deg);
+}
+.palet.palet__opened .renk_paleti:nth-child(10) {
+  -webkit-transform: rotate(324deg);
+          transform: rotate(324deg);
+}
+.palet .renk_paleti, .palet .renk_paleti__main {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+  border-style: solid;
+  border-color: #ffffff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+}
+.palet .renk_paleti__main {
+  background-color: #3F729B;
+  width: 100px;
+  height: 100px;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+  border-width: 6px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.palet .renk_paleti__main:after {
+  content: "PT";
+  position: absolute;
+  visibility: visible;
+  display: block;
+  padding: 15px 10px;
+  font-weight: bold;
+  font-size: -webkit-xxx-large;
+  text-align: -webkit-center;
+  display: table-cell;
+  vertical-align: middle;
+}
+.palet .renk_paleti {
+  width: 50px;
+  height: 50px;
+  display: block;
+  -webkit-transform-origin: 250% 50%;
+          transform-origin: 250% 50%;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  border-width: 3px;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+</style>
+<script>
+var _$paletElement = $('.renk_paleti');
+
+function _ptarkaplan(https://www.teamgaraj.com/image/cache/catalog/URUNLER/TG-G18-500x500.jpg){
+	$.each(_$paletElement, function(i){
+		   $(this).css('background-color', $(this).data('color'));
+	})
+}
+
+function _ptbuton(){
+	$('.renk_paleti__main').on('click', function(){ // Açılış butonuna tıklama olayı
+		$('.palet').toggleClass('palet__opened');
+	})
+}
+
+function _PTButonaTikla(data:image/png;base64,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){
+	$('.renk_paleti').on('click', function(){ //Renk butonuna tıklama olayı
+		var color = $(this).data('color'); //Hangi renk seçildiğini belirle
+		_PTArkaPlanBelirle(color); //Rengi Tanımlama
+		 localStorage.setItem("premiumturk_color", color);
+	})
+}
+
+function _PTArkaPlanBelirle(blue){//Arka planı belirleyen olay
+	$('.renk_paleti__main').css('background', color);
+	$('.bolum').css('background', color);//bolum classının arka planına seçilen rengi ekle. "body" class'ına da ekleyebilirsiniz div dışındaki tüm alanı kapsayacaktır.
+}
+
+if(localStorage.getItem("premiumturk_color")){
+	var val = localStorage.getItem("premiumturk_color");
+	$('.bolum').css('background', val);
+}
+
+_ptarkaplan();
+_ptbuton();
+_PTButonaTikla();
+</script><div class="menu">
+<ul>
+    <li class="single-link"><a target="_blank" href="#">+Ahmet Sabri Noyan</a></li>
+    <li class="single-link"><a target="_blank" href="#">Profil</a></li>
+    <li class="single-link"><a target="_blank" href="#">Paylaşımlar</a></li>
+    <li class="single-link"><a target="_blank" href="#">Sayfalar</a></li>
+    <li class="current"><a target="_blank" href="#">Arama</a></li>
+    <li class="single-link"><a target="_blank" href="#">Sosyal</a></li>
+    <li class="single-link"><a target="_blank" href="#">Gizlilik</a></li>
+</ul>
+</div>
+<link rel="stylesheet" href="https://datas.premium-turk.net/css/googlemenu.css" /><?php
+/**
+ * Add Member Directory Online Tab .
+ */
+function yzc_add_md_online_tab() {
+    $online_count= yzc_get_online_users_total();
+
+    ?>
+    <style type="text/css">
+        
+    .yz-tabs-list-gradient #members-online i {
+        background: #ff2f20;
+        background: url(<?php echo YZ_PA; ?>images/dotted-bg.png),linear-gradient(to left, #ff2f20 , #ff1162 );
+        background: url(<?php echo YZ_PA; ?>images/dotted.png),-webkit-linear-gradient(right, #ff2f20 , #ff1162 );
+    }
+
+    .yz-tabs-list-gradient .loading#members-online i {
+        background: transparent;
+    }
+
+    </style>
+    <li id="members-online" class="yzmt-directory-tab">
+            <a href="#"><i class="fas fa-fire"></i><?php printf( __( 'Online Users %1s', 'youzer' ), '<span>' . $online_count . '</span>' ); ?></a>
+    </li>
+
+    <?php
+
+}
+
+add_action( 'bp_members_directory_member_types', 'yzc_add_md_online_tab' );
+/**
+ * Get Online Users Total.
+ */
+function yzc_get_online_users_total() {
+
+
+    global $bp, $wpdb;
+
+    // Init Data
+    $interval = apply_filters( 'bp_user_query_online_interval', 15 );
+    $component = buddypress()->members->id;
+    
+    // Request.    
+    $online_count = $wpdb->get_var( "SELECT COUNT(*) FROM {$bp->members->table_name_last_activity} WHERE component = '$component' AND type = 'last_activity' AND date_recorded >= DATE_SUB( UTC_TIMESTAMP(), INTERVAL $interval MINUTE )" );
+
+    return $online_count;
+
+}
+
+/**
+ * Members Directory - Get Online Members.
+ */
+function yzc_get_md_online_members_list( $loop ) {
+
+    if ( bp_is_members_directory() && isset( $_POST['scope'] ) && $_POST['scope'] == 'online' ) {
+        $loop['type'] = 'online';
+    }
+
+    return $loop;
+}
+
+add_filter( 'bp_after_has_members_parse_args', 'yzc_get_md_online_members_list', 9999 );
+$_['entry_firstname']               = 'Ad';
+$_['entry_lastname']                = 'Soyad';
+$_['entry_email']                   = 'E-Mail';
+$_['text_login']                    = 'Giriş';
+$_['text_logout']                   = 'Çıkış';
+$_['text_account_new']            	= 'Hesap oluştur';
